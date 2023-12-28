@@ -1,0 +1,134 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="RegistrationTest" parallel="tests" thread-count="1" >
+
+    <test name="TestNothingEntered">
+        <parameter name="firstname" value=""/>
+        <parameter name="lastname" value=""/>
+        <parameter name="email" value=""/>
+        <parameter name="password" value=""/>
+
+
+        <parameter name="elementorSelectorError" value="//*[contains(text(), 'There are 4 errors')]"/>
+        <parameter name="expectedResultError" value="There are 4 errors"/>
+        <parameter name="elementorSelectorFirst" value="//*[@id='center_column']/div/ol/li[2]"/>
+        <parameter name="expectedResultFirst" value="firstname is required."/>
+        <parameter name="elementorSelectorLast" value="//*[contains(text(), 'last')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultLast" value="lastname is required."/>
+        <parameter name="elementorSelectorPass" value="//*[contains(text(), 'passwd')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultPass" value="passwd is required."/>
+        <parameter name="elementorSelectorEmail" value="//*[contains(text(), 'email')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultEmail" value="email is required."/>
+        <classes>
+            <class name="AutomationTest"/>
+        </classes>
+    </test>
+
+    <test name="TestFirstNameEntered">
+        <parameter name="firstname" value="Jessie"/>
+        <parameter name="lastname" value=""/>
+        <parameter name="email" value=""/>
+        <parameter name="password" value=""/>
+
+        <parameter name="elementorSelectorError" value="//*[contains(text(), 'There are 3 errors')]"/>
+        <parameter name="expectedResultError" value="There are 3 errors"/>
+        <parameter name="elementorSelectorLast" value="//*[contains(text(), 'last')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultLast" value="lastname is required."/>
+        <parameter name="elementorSelectorPass" value="//*[contains(text(), 'passwd')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultPass" value="passwd is required."/>
+        <parameter name="elementorSelectorEmail" value="//*[contains(text(), 'email')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultEmail" value="email is required."/>
+        <classes>
+            <class name="AutomationTest"/>
+        </classes>
+    </test>
+    <test name="TestLastNameEntered">
+        <parameter name="firstname" value=""/>
+        <parameter name="lastname" value="James"/>
+        <parameter name="email" value=""/>
+        <parameter name="password" value=""/>
+
+        <parameter name="elementorSelectorError" value="//*[contains(text(), 'There are 3 errors')]"/>
+        <parameter name="expectedResultError" value="There are 3 errors"/>
+        <parameter name="elementorSelectorFirst" value="//*[contains(text(), 'first')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultFirst" value="firstname is required."/>
+        <parameter name="elementorSelectorPass" value="//*[contains(text(), 'passwd')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultPass" value="passwd is required."/>
+        <parameter name="elementorSelectorEmail" value="//*[contains(text(), 'email')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultEmail" value="email is required."/>
+        <classes>
+            <class name="AutomationTest"/>
+        </classes>
+    </test>
+    <test name="TestPassEntered">
+        <parameter name="firstname" value=""/>
+        <parameter name="lastname" value=""/>
+        <parameter name="email" value=""/>
+        <parameter name="password" value="123456"/>
+
+        <parameter name="elementorSelectorError" value="//*[contains(text(), 'There are 3 errors')]"/>
+        <parameter name="expectedResultError" value="There are 3 errors"/>
+        <parameter name="elementorSelectorFirst" value="//*[contains(text(), 'first')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultFirst" value="firstname is required."/>
+        <parameter name="elementorSelectorLast" value="//*[contains(text(), 'last')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultLast" value="lastname is required."/>
+        <parameter name="elementorSelectorEmail" value="//*[contains(text(), 'email')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultEmail" value="email is required."/>
+        <classes>
+            <class name="AutomationTest"/>
+        </classes>
+    </test>
+    <test name="TestEmailEntered">
+        <parameter name="firstname" value=""/>
+        <parameter name="lastname" value=""/>
+        <parameter name="email" value="test12345test@test1.com"/>
+        <parameter name="password" value=""/>
+
+        <parameter name="elementorSelectorError" value="//*[contains(text(), 'There are 3 errors')]"/>
+        <parameter name="expectedResultError" value="There are 3 errors"/>
+        <parameter name="elementorSelectorFirst" value="//*[contains(text(), 'first')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultFirst" value="firstname is required."/>
+        <parameter name="elementorSelectorLast" value="//*[contains(text(), 'last')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultLast" value="lastname is required."/>
+        <parameter name="elementorSelectorPass" value="//*[contains(text(), 'passwd')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultPass" value="passwd is required."/>
+
+        <classes>
+            <class name="AutomationTest"/>
+        </classes>
+    </test>
+    <test name="TestFirstLastEntered">
+        <parameter name="firstname" value="Jessie"/>
+        <parameter name="lastname" value="James"/>
+        <parameter name="email" value=""/>
+        <parameter name="password" value=""/>
+
+        <parameter name="elementorSelectorError" value="//*[contains(text(), 'There are 2 errors')]"/>
+        <parameter name="expectedResultError" value="There are 2 errors"/>
+
+        <parameter name="elementorSelectorPass" value="//*[contains(text(), 'passwd')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultPass" value="passwd is required."/>
+        <parameter name="elementorSelectorEmail" value="//*[contains(text(), 'email')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultEmail" value="email is required."/>
+
+        <classes>
+            <class name="AutomationTest"/>
+        </classes>
+    </test>
+    <test name="TestFirstLastPassEntered">
+        <parameter name="firstname" value="Jessie"/>
+        <parameter name="lastname" value="James"/>
+        <parameter name="email" value=""/>
+        <parameter name="password" value="1234567"/>
+
+        <parameter name="elementorSelectorError" value="//*[contains(text(), 'There is 1 error')]"/>
+        <parameter name="expectedResultError" value="There is 1 error"/>
+
+        <parameter name="elementorSelectorEmail" value="//*[contains(text(), 'email')]/ancestor::*[contains(text(), 'is required.')]"/>
+        <parameter name="expectedResultEmail" value="email is required."/>
+
+        <classes>
+            <class name="AutomationTest"/>
+        </classes>
+    </test>
+
+</suite>
